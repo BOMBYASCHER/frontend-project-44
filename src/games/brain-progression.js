@@ -1,4 +1,3 @@
-
 import { congratsMessage, getGameRounds, passMessage, questionMessage, randomNumber, stopMessage } from "../index.js";
 import getName from "../cli.js";
 

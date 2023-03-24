@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import getName from '../cli.js';
 import { congratsMessage, getGameRounds, passMessage, questionMessage, randomNumber, stopMessage } from '../index.js';
 
