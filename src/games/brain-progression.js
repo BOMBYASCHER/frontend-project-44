@@ -30,7 +30,7 @@ const generateProgression = (lengthOfProgression, correctAnswer) => {
     for (let i = 1; i < positionOfNumber; i++) {
         expression = `${expression}${correctAnswer - stepValue * (positionOfNumber - i)} `;
     }
-    expression = `${expression} .. `;
+    expression = `${expression}.. `;
     for (let i = 0; i < lengthOfProgression - positionOfNumber; i++) {
         expression = `${expression}${correctAnswer + stepValue * (i + 1)} `;
     }
