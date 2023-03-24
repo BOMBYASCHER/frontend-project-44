@@ -30,7 +30,7 @@ const calcGame = () => {
       default:
     }
     let userAnswer = questionMessage(expression);
-    if (userAnswer === correctAnswer) {
+    if (userAnswer == correctAnswer) {
       passMessage();
       i++;
     } else {
