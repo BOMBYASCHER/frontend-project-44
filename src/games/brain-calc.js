@@ -29,16 +29,16 @@ const calcGame = () => {
         break;
       default:
     }
-    let userAnswer = questionMessage(expression);
+    const userAnswer = questionMessage(expression);
     if (userAnswer === String(correctAnswer)) {
       passMessage();
-      i = i + 1;
+      i += 1;
     } else {
       stopMessage(userName, correctAnswer, userAnswer);
       break;
-    }    
     }
-  if (i == getGameRounds()) {
+  }
+  if (i === getGameRounds()) {
     congratsMessage(userName);
   }
 };

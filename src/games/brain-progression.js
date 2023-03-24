@@ -1,16 +1,30 @@
 import { congratsMessage, getGameRounds, passMessage, questionMessage, randomNumber, stopMessage } from '../index.js';
 import getName from '../cli.js';
 
+const generateProgression = (lengthOfProgression, correctAnswer) => {
+  const stepValue = randomNumber(1, 10);
+  const positionOfNumber = randomNumber(1, lengthOfProgression);
+  let expression = "";
+  for (let i = 1; i < positionOfNumber; i++) {
+    expression = `${expression}${correctAnswer - stepValue * (positionOfNumber - i)} `;
+  }
+  expression = `${expression}.. `;
+  for (let i = 0; i < lengthOfProgression - positionOfNumber; i++) {
+    expression = `${expression}${correctAnswer + stepValue * (i + 1)} `;
+  }
+  return expression;
+};
+
 const progressionGame = () => {
   const userName = getName();
   console.log('What number is missing in the progression?');
   let i = 0;
   while (i < getGameRounds()) {
-    let correctAnswer = randomNumber(-100, 100);
-    let userAnswer = questionMessage(generateProgression(10, correctAnswer));
+    const correctAnswer = randomNumber(-100, 100);
+    const userAnswer = questionMessage(generateProgression(10, correctAnswer));
     if (String(correctAnswer) === userAnswer) {
       passMessage();
-      i = i + 1;
+      i += 1;
     } else {
       stopMessage(userName, correctAnswer, userAnswer);
       break;
@@ -23,16 +37,3 @@ const progressionGame = () => {
 
 export default progressionGame;
 
-const generateProgression = (lengthOfProgression, correctAnswer) => {
-  let stepValue = randomNumber(1, 10);
-  let positionOfNumber = randomNumber(1, lengthOfProgression);
-  let expression = "";
-  for (let i = 1; i < positionOfNumber; i++) {
-    expression = `${expression}${correctAnswer - stepValue * (positionOfNumber - i)} `;
-  }
-  expression = `${expression}.. `;
-  for (let i = 0; i < lengthOfProgression - positionOfNumber; i++) {
-    expression = `${expression}${correctAnswer + stepValue * (i + 1)} `;
-  }
-  return expression;
-};

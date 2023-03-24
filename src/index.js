@@ -1,14 +1,11 @@
-
 import readlineSync from 'readline-sync';
 
 const gameRounds = 3;
-export const getGameRounds = () => {
-  return gameRounds;
-};
+export const getGameRounds = () => gameRounds;
 
 export const questionMessage = (expression) => {
   console.log(`Question: ${expression}`);
-  let enter = readlineSync.question('Your answer: ')
+  const enter = readlineSync.question('Your answer: ');
   return enter;
 };
 
@@ -26,6 +23,6 @@ export const congratsMessage = (username) => {
 };
 
 export const randomNumber = (minValue, maxValue) => {
-  let number = Math.random() * (maxValue - minValue) + minValue;
+  const number = Math.random() * (maxValue - minValue) + minValue;
   return Math.round(number);
 };

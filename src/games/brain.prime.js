@@ -1,20 +1,34 @@
 import { congratsMessage, getGameRounds, passMessage, questionMessage, randomNumber, stopMessage } from '../index.js';
 import getName from '../cli.js';
 
+const isPrime = (number) => {
+  let i = 2;
+  if (number < 2) {
+    return false;
+  }
+  while (i <= Math.sqrt(number)) {
+    if (number % i == 0) {
+      return false;
+    }
+    i += 1;
+  }
+  return true;
+};
+
 const primeGame = () => {
   const userName = getName();
-  console.log("Answer \"yes\" if given number is prime. Otherwise answer \"no\".");
+  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   let i = 0;
   while (i < getGameRounds()) {
-    let number = randomNumber(0, 100);
-    let userAnswer = questionMessage(number);
-    let correctAnswer = "no";
+    const number = randomNumber(0, 100);
+    const userAnswer = questionMessage(number);
+    let correctAnswer = 'no';
     if (isPrime(number)) {
-      correctAnswer = "yes";
+      correctAnswer = 'yes';
     }
     if (userAnswer === correctAnswer) {
       passMessage();
-      i = i + 1;
+      i += 1;
     } else {
         stopMessage(userName, correctAnswer, userAnswer);
         break;
@@ -27,16 +41,3 @@ const primeGame = () => {
 
 export default primeGame;
 
-const isPrime = (number) => {
-  let i = 2;
-  if (number < 2) {
-    return false;
-  }
-  while (i <= Math.sqrt(number)) {
-    if (number % i == 0) {
-      return false;
-    }
-    i = i + 1;
-  }
-  return true;
-};
