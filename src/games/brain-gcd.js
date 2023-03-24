@@ -8,13 +8,7 @@ const gcdGame = () => {
     while (i < getGameRounds()) {
         let firstNumber = randomNumber(0, 100);
         let secondNumber = randomNumber(0, 100);
-        let maxNumber = Math.max(firstNumber, secondNumber);
-        let correctAnswer;
-        if (firstNumber == 0 || secondNumber == 0) {
-            correctAnswer = maxNumber;
-        } else {
-            correctAnswer = getGcd(firstNumber, secondNumber);
-        }
+        let correctAnswer = getGcd(firstNumber, secondNumber);
         let expression = `${firstNumber} ${secondNumber}`;
         let userAnswer = questionMessage(expression);
         if (correctAnswer == userAnswer) {
