@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import getName from '../src/cli.js';
-import { congratsMessage, getGameRounds, passMessage, questionMessage, randomNumber, stopMessage } from '../src/index.js';
+import getName from '../cli.js';
+import { congratsMessage, getGameRounds, passMessage, questionMessage, randomNumber, stopMessage } from '../index.js';
 
 const userName = getName();
 console.log("Answer \"yes\" if the number is even, otherwise answer \"no\".");
