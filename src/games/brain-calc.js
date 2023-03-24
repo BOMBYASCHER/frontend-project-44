@@ -1,5 +1,5 @@
 import {
-  congratsMessage, getGameRounds, passMessage, questionMessage, randomNumber, stopMessage
+  congratsMessage, getGameRounds, passMessage, questionMessage, randomNumber, stopMessage,
 } from '../index.js';
 import getName from '../cli.js';
 
