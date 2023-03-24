@@ -18,7 +18,7 @@ const gcdGame = () => {
     const correctAnswer = getGcd(firstNumber, secondNumber);
     const expression = `${firstNumber} ${secondNumber}`;
     const userAnswer = questionMessage(expression);
-    if (correctAnswer === userAnswer) {
+    if (String(correctAnswer) === userAnswer) {
       passMessage();
        i += 1;
     } else {
