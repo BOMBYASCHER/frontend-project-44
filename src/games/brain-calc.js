@@ -6,9 +6,8 @@ const calcGame = () => {
     const userName = getName();
     console.log("What is the result of the expression?");
     let i = 0;
-    let correctAnswer;
-
     while (i < getGameRounds()) {
+        let correctAnswer;
         let firstNumber = randomNumber(0, 100);
         let secondNumber = randomNumber(0, 100);
         let key = randomNumber(1, 3);
