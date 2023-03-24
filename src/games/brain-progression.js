@@ -8,7 +8,7 @@ const progressionGame = () => {
   while (i < getGameRounds()) {
     let correctAnswer = randomNumber(-100, 100);
     let userAnswer = questionMessage(generateProgression(10, correctAnswer));
-    if (correctAnswer === userAnswer) {
+    if (correctAnswer == userAnswer) {
       passMessage();
       i++;
     } else {

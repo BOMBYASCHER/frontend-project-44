@@ -12,7 +12,7 @@ const primeGame = () => {
     if (isPrime(number)) {
       correctAnswer = "yes";
     }
-    if (userAnswer === correctAnswer) {
+    if (userAnswer == correctAnswer) {
       passMessage();
       i++;
     } else {
