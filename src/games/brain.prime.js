@@ -1,4 +1,6 @@
-import { congratsMessage, getGameRounds, passMessage, questionMessage, randomNumber, stopMessage } from '../index.js';
+import { 
+  congratsMessage, getGameRounds, passMessage, questionMessage, randomNumber, stopMessage 
+} from '../index.js';
 import getName from '../cli.js';
 
 const isPrime = (number) => {
@@ -7,7 +9,7 @@ const isPrime = (number) => {
     return false;
   }
   while (i <= Math.sqrt(number)) {
-    if (number % i == 0) {
+    if (number % i === 0) {
       return false;
     }
     i += 1;
@@ -30,8 +32,8 @@ const primeGame = () => {
       passMessage();
       i += 1;
     } else {
-        stopMessage(userName, correctAnswer, userAnswer);
-        break;
+      stopMessage(userName, correctAnswer, userAnswer);
+      break;
     }
   }
   if (i === getGameRounds()) {

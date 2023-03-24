@@ -1,4 +1,6 @@
-import { congratsMessage, getGameRounds, passMessage, questionMessage, randomNumber, stopMessage } from '../index.js';
+import { 
+  congratsMessage, getGameRounds, passMessage, questionMessage, randomNumber, stopMessage 
+} from '../index.js';
 import getName from '../cli.js';
 
 const getGcd = (firstNumber, secondNumber) => {
@@ -20,7 +22,7 @@ const gcdGame = () => {
     const userAnswer = questionMessage(expression);
     if (String(correctAnswer) === userAnswer) {
       passMessage();
-       i += 1;
+      i += 1;
     } else {
       stopMessage(userName, correctAnswer, userAnswer);
       break;
