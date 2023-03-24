@@ -7,9 +7,9 @@ const calcGame = () => {
   let i = 0;
   while (i < getGameRounds()) {
     let correctAnswer;
-    let firstNumber = randomNumber(0, 100);
+    const firstNumber = randomNumber(0, 100);
     let secondNumber = randomNumber(0, 100);
-    let key = randomNumber(1, 3);
+    const key = randomNumber(1, 3);
     let expression = '';
     if (key === 3) {
       secondNumber = randomNumber(0, 10);
@@ -30,13 +30,13 @@ const calcGame = () => {
       default:
     }
     let userAnswer = questionMessage(expression);
-    if (userAnswer == correctAnswer) {
+    if (userAnswer === String(correctAnswer)) {
       passMessage();
-      i++;
+      i = i + 1;
     } else {
-        stopMessage(userName, correctAnswer, userAnswer);
-        break;
-      }    
+      stopMessage(userName, correctAnswer, userAnswer);
+      break;
+    }    
     }
   if (i == getGameRounds()) {
     congratsMessage(userName);

@@ -7,7 +7,7 @@ const evenGame = () => {
   let i = 0;
   while (i < getGameRounds()) {
     let correctAnswer;
-    let number = randomNumber(0, 100);
+    const number = randomNumber(0, 100);
     if (number % 2 === 0) {
       correctAnswer = "yes";
     } else {
@@ -16,7 +16,7 @@ const evenGame = () => {
     let userAnswer = questionMessage(number);
     if (userAnswer === correctAnswer) {
       passMessage();
-      i++;
+      i = i + 1;
     } else {
         stopMessage(userName, correctAnswer, userAnswer);
         break;

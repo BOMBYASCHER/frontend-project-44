@@ -8,9 +8,9 @@ const progressionGame = () => {
   while (i < getGameRounds()) {
     let correctAnswer = randomNumber(-100, 100);
     let userAnswer = questionMessage(generateProgression(10, correctAnswer));
-    if (correctAnswer == userAnswer) {
+    if (String(correctAnswer) === userAnswer) {
       passMessage();
-      i++;
+      i = i + 1;
     } else {
       stopMessage(userName, correctAnswer, userAnswer);
       break;
