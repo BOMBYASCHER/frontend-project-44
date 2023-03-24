@@ -1,6 +1,6 @@
 import getName from '../cli.js';
-import { 
-  congratsMessage, getGameRounds, passMessage, questionMessage, randomNumber, stopMessage 
+import {
+  congratsMessage, getGameRounds, passMessage, questionMessage, randomNumber, stopMessage
 } from '../index.js';
 
 const evenGame = () => {

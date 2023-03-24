@@ -1,12 +1,12 @@
-import { 
-  congratsMessage, getGameRounds, passMessage, questionMessage, randomNumber, stopMessage 
+import {
+  congratsMessage, getGameRounds, passMessage, questionMessage, randomNumber, stopMessage
 } from '../index.js';
 import getName from '../cli.js';
 
 const generateProgression = (lengthOfProgression, correctAnswer) => {
   const stepValue = randomNumber(1, 10);
   const positionOfNumber = randomNumber(1, lengthOfProgression);
-  let expression = "";
+  let expression = '';
   for (let i = 1; i < positionOfNumber; i += 1) {
     expression = `${expression}${correctAnswer - stepValue * (positionOfNumber - i)} `;
   }

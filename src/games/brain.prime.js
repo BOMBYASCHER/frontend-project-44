@@ -1,5 +1,5 @@
-import { 
-  congratsMessage, getGameRounds, passMessage, questionMessage, randomNumber, stopMessage 
+import {
+  congratsMessage, getGameRounds, passMessage, questionMessage, randomNumber, stopMessage
 } from '../index.js';
 import getName from '../cli.js';
 
@@ -42,4 +42,3 @@ const primeGame = () => {
 };
 
 export default primeGame;
-
